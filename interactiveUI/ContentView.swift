@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+   @State private var name = ""
+    @State private var textTitle = "What is your name?"
+    
     var body: some View {
         ZStack {
             Color("Color")
           
             
             VStack {
-                Text("What is your name?")
+                Text(textTitle)
                     .fontWeight(.bold)
                     .font(.system(size: 40))
-                TextField("Type your name here", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Type your name here", text: $name)
                     .multilineTextAlignment(.center)
                     .font(.title)
                     .border(Color.gray, width: 1)
                 
                     .padding()
                 Button("Submit Name") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                  textTitle = "Welcome, \(name)!"
+                    print(textTitle)
                 }//closes button
                 .font(.title2)
                 .buttonStyle(.borderedProminent)
@@ -35,8 +40,6 @@ struct ContentView: View {
     }
    
     }
-
-
 #Preview {
     ContentView()
 }
