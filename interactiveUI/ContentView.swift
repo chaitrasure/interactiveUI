@@ -11,6 +11,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color("Color")
+          
             
             VStack {
                 Text("What is your name?")
@@ -22,6 +23,12 @@ struct ContentView: View {
                     .border(Color.gray, width: 1)
                 
                     .padding()
+                Button("Submit Name") {
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                }//closes button
+                .font(.title2)
+                .buttonStyle(.borderedProminent)
+                .tint(.pink)
         }
         
         }
